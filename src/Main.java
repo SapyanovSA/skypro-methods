@@ -16,7 +16,6 @@ public class Main {
     public static void announcesAndPrintOperationSystemAndVertion(int year, byte vertion) {
 
         int currentYear = LocalDate.now().getYear();
-        int liteVertionYear = 2015;
         //Проверка на корректные данные
         if (vertion != 1 && vertion != 0) {
             System.out.println("Введите корректные данные(0 или 1).");
@@ -26,11 +25,11 @@ public class Main {
             return;
         }
         // Вывод более подходящей версии
-        if (vertion == 0 && year < liteVertionYear) {
+        if (vertion == 0 && year < currentYear) {
             System.out.println("Установите облегченную версию IOS");
-        } else if (vertion == 1 && year < liteVertionYear) {
+        } else if (vertion == 1 && year < currentYear) {
             System.out.println("Установите облегченную версию Android");
-        } else if (vertion == 0 && year >= liteVertionYear) {
+        } else if (vertion == 0 && year == currentYear) {
             System.out.println("Установите обычную версию IOS");
         } else {
             System.out.println("Установите обычную версию Android");
@@ -59,7 +58,7 @@ public class Main {
 
         //Задача 2
         System.out.println("Задача 2");
-        announcesAndPrintOperationSystemAndVertion(2025,  (byte) 1);
+        announcesAndPrintOperationSystemAndVertion(2024,  (byte) 1);
         System.out.println();
 
         //Задача 3
